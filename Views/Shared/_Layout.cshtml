@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@ViewData["Title"] - Mi Proyecto</title>
+</head>
+<body>
+
+
+  <header>
+    <nav>
+      <div>
+        <a asp-area="" asp-controller="Home" asp-action="Index">Mi Proyecto</a>
+        <div>
+          <ul>
+            <li>
+              <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li>
+              <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </li>
+            <li>
+              <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  
+  <main>
+    @RenderBody()
+  </main>
+  
+
+  <footer>
+    &copy; 2023 - Mi Proyecto - <a asp-area="" asp-controller="Home" asp-action="privacy">Privacy</a> - <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+  </footer>
+  <script src="/librerias-de-jquery"></script>
+  <script src="/librerias-de-bootstrap"></script>
+  <script src="7mi-archivo-de-JavaScript"></script>
+</body>
+</html>
