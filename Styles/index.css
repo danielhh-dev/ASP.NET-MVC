@@ -1,0 +1,45 @@
+p{
+    color: rgb(171, 171, 252);
+}
+.container{
+    font-size: 40px;
+}
+
+.container p{
+    color: bisque;
+    font-size: 1.5em;
+}
+
+form{
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+table{
+    width: 100%;
+}
+
+th,td{
+    padding: 8px;
+    text-align: left;
+}
+
+th{
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.button {
+    background-color: white ;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+
+    &.secondary {
+      background-color: white;
+    }
+  }

@@ -1,0 +1,139 @@
+// Definición de variables
+$color-primario: #3498db;
+$color-segundario: #e74c3c;
+$color-fondo: #f2f2f2;
+$tamanio-fuente: 16px;
+
+//Ejemplo Mixins
+@mixin boton-estilo{
+    background-color: $color-primario;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+}
+.button {
+    @include boton-estilo;
+}
+
+.card {
+    @include boton-estilo;
+    cursor:pointer;
+}
+//Fin ejemplo mixins
+
+//Ejemplo Herencia   DRY(DON'T REPEAT YOURSELF)
+%boton-base {
+    padding: 10px 20px;
+    font-size: 1.2rem
+}
+
+.button{
+    @extend %boton-base;
+    background-color: antiquewhite;
+}
+//Fin ejemplo herencia
+
+
+//Anidamiento una regla hija dentro de regla padre
+.button {
+    background-color: $color-primario;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    //Esto es igual que .button.secondary
+    &.secondary {
+      background-color: $color-segundario;
+    }
+}
+
+// Operaciones matemáticas
+$ancho: 100px;
+$padding: 10px; 
+
+.container {
+    width: $ancho * 2; // width: 200px
+    padding: $padding / 2; //padding: 5px
+}
+
+.container .logo {
+    width: $ancho / 3; // width: 33px
+    padding: $padding / 3; //padding: 3px
+}
+// Fin ejemplo operaciones matemáticas
+
+
+//Directivas de control de flujo
+$temperatura: 31;
+
+//if
+.alerta {
+    @if $temperatura > 30{
+        background-color: red;
+    }@else{
+        background-color: green;
+    }
+}
+
+//for
+@for $i from 1 through 3 {
+    .columna-#{$i} {
+        width: 100% / $i;
+    }
+}
+//Este ciclo for transpilaria a css de esta manera:
+.columna-1{
+    width: 100%;
+}
+.columna-2{
+    width: 50%;
+}
+.columna-3{
+    width: 33%;
+}
+// Fin ejemplo For
+
+
+
+//Each
+$colores: red, green, blue;
+
+@each $color in $colores {
+    .cuadro-#{$color} {
+        background-color: $color;
+    }
+}
+//Este ciclo forEach transpilaria a css de esta manera:
+.cuadro-red{
+    background-color: red;
+}
+.cuadro-green{
+    background-color: green;
+}
+.cuadro-blue{
+    background-color: blue;
+}
+// Fin ejemplo ForEach
+
+
+@while $ancho > 0 {
+    .caja-#{$ancho}{
+        width: $ancho;
+    }
+
+    $ancho: $ancho - 10
+}
+
+//Este ciclo while transpilaria a css de esta manera:
+.caja-100{
+    width: 100px;
+}
+.caja-90{
+    width: 90px;
+}
+//...
+.caja-10{
+    width: 10px;
+}
+// Fin ejemplo while
